@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "styles/index.css" %}">
+</head>
+<body>
+    <div class="app__div1">
+        <div class="app__div2">
+            <div class="nav__div1">
+                <div class="nav__div2">
+                    <div class="nav__div3">
+                        <div class="nav__extra1">
+                            <a href="/"><p>Thebanglorepost</p></a>
+                        </div>
+                    </div>
+                    <div class="nav__div4">
+                        <div class="nav__div5">
+                            <div class="nav__extra0">
+                                <a href="/"><p>Blog</p></a>
+                            </div>
+                        </div>
+                        <div class="nav__div6">
+                            <div class="nav__extra2">
+                                <a href="/text"><p>Collection</p></a>
+                            </div>
+                        </div>
+                        <div class="nav__div7">
+                            <div class="nav__extra3 bio">
+                                <a href="/bio"><p>Bio</p></a>
+                            </div>
+                        </div>
+                        <div class="nav__div8">
+                            <div class="nav__extra4">
+                                <a href="/contact"><p>Contact</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+              
+            {% endblock content %}
+            <div class="footer__div1">
+                <div class="footer__div3"></div>
+                <div class="footer__div2">
+                    <div class="footer__div4">
+                        <div class="footer__div5">
+                            <p>Connet With Me</p>
+                            <div class="footer__div6">
+                                <p>twitter</p>
+                                <p>LinkedIn</p>
+                                <p>Instagram</p>
+                            </div>
+                        </div>
+                        <div class="footer__div7">
+                            <div class="footer__div8"></div>
+                            <div class="footer__div9">
+                                <a href="/contact"><p>Contact</p></a>
+                            </div>
+                        </div>
+                        <div class="footer__div8000"></div>
+                        <div class="footer__div10">
+                            <p>Silvio Meira © 2022All rights reserved</p>
+                            <p><span>Made by</span> Kawaii Web Studio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

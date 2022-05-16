@@ -1,0 +1,100 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="home__div1">
+    <div class="home__div2">
+        <div class="home__div3">
+            <div class="home__div4">
+                <p><span>day by day,</span> bit by bit</p>
+            </div>
+            <div class="home__div5">
+                <div class="home__div6">
+                    <svg class="home__svg1" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><path d="M24.293,25.708,19.18,20.594A11.668,11.668,0,0,1,0,11.667,11.666,11.666,0,0,1,19.916,3.417a11.668,11.668,0,0,1,.677,15.762l5.113,5.113a1,1,0,0,1-1.414,1.415ZM2,11.667a9.662,9.662,0,0,0,16.414,6.917,1.006,1.006,0,0,1,.17-.17A9.665,9.665,0,1,0,2,11.667Z" fill="currentColor"></path></svg>
+                </div>
+                <form action="{% url 'search' %}" method="get">
+                    <input type="text" placeholder="do a quick search" class="home__input1" id="home__input1" name="query">
+                </form>
+            </div>
+        </div>
+        <div class="home__div7">
+            <div class="home__div8">
+                <div class="home__div9">
+                    <img class="home__img1" src="https://s7380.pcdn.co/wp-content/themes/silviomeira/dist/images/default.webp" alt="">
+                </div>
+            </div>
+            <!-- <div class="home__div10">
+                <div class="home__div11">
+                    <div class="home__extra1">
+                        <div class="home__div12">
+                            <p>Apr 3, 2022 | 27 min of reading</p>
+                        </div>
+                        <div class="home__div13">
+                            <h4>Defining the Metaverse</h4>
+                        </div>
+                        <div class="home__div14">
+                            <p>Imagine FOOTBALL in the METAVERSE : two teams, A and B, play in THEIR stadiums, with THEIR balls and THEIR fans.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="home__div15">
+                <h1>Recent Article</h1>
+                <div class="home__div16">
+                    <div class="home__div17">
+                        <div class="home__div18">
+                            {% for post in posts %}
+                                <a href="{% url 'details' post.category.slug post.slug %}">
+                                    <div class="home__div19">
+                                        <div class="home__div20">
+                                            <p> {{post.created_at|date:'M d, Y'}} | {{post.readMin}} of reading</p>
+                                        </div>
+                                        <div class="home__div21">
+                                            <h4>{{post.title}}</h4>
+                                        </div>
+                                        <div class="home__div22">
+                                            <p>{{post.shortDis}}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                            <!-- <div class="home__div19">
+                                <div class="home__div20">
+                                    <p>Apr 3, 2022 | 27 min of reading</p>
+                                </div>
+                                <div class="home__div21">
+                                    <h4>Defining the Metaverse</h4>
+                                </div>
+                                <div class="home__div22">
+                                    <p>Imagine FOOTBALL in the METAVERSE : two teams, A and B, play in THEIR stadiums, with THEIR balls and THEIR fans.</p>
+                                </div>
+                            </div>
+                            <div class="home__div19">
+                                <div class="home__div20">
+                                    <p>Apr 3, 2022 | 27 min of reading</p>
+                                </div>
+                                <div class="home__div21">
+                                    <h4>Defining the Metaverse</h4>
+                                </div>
+                                <div class="home__div22">
+                                    <p>Imagine FOOTBALL in the METAVERSE : two teams, A and B, play in THEIR stadiums, with THEIR balls and THEIR fans.</p>
+                                </div>
+                            </div>
+                            <div class="home__div19">
+                                <div class="home__div20">
+                                    <p>Apr 3, 2022 | 27 min of reading</p>
+                                </div>
+                                <div class="home__div21">
+                                    <h4>Defining the Metaverse</h4>
+                                </div>
+                                <div class="home__div22">
+                                    <p>Imagine FOOTBALL in the METAVERSE : two teams, A and B, play in THEIR stadiums, with THEIR balls and THEIR fans.</p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

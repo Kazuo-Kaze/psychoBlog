@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="coll__div1">
+    <div class="coll__div2">
+        <div class="home__div3">
+            <div class="home__div4">
+                <p class="span__coll" style="color: #666;">Showing results for <span style="color: #101010;">"{{query}}"</span></p>
+                
+            </div>
+            <div class="home__div5">
+                <div class="home__div6">
+                    <svg class="home__svg1" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><path d="M24.293,25.708,19.18,20.594A11.668,11.668,0,0,1,0,11.667,11.666,11.666,0,0,1,19.916,3.417a11.668,11.668,0,0,1,.677,15.762l5.113,5.113a1,1,0,0,1-1.414,1.415ZM2,11.667a9.662,9.662,0,0,0,16.414,6.917,1.006,1.006,0,0,1,.17-.17A9.665,9.665,0,1,0,2,11.667Z" fill="currentColor"></path></svg>
+                </div>
+                <form action="{% url 'search' %}" method="get">
+                    <input type="text" placeholder="do a quick search" class="home__input1" id="home__input1" name="query">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="coll__div4"></div>
+    <div class="coll__div5">
+        <div class="home__div16">
+            <div class="home__div17">
+                <div class="home__div18">
+                    {% for post in posts %}
+                        <a href="{% url 'details' post.category.slug post.slug %}">
+                            <div class="home__div19">
+                                <div class="home__div20">
+                                    <p> {{post.created_at|date:'M d, Y'}} | {{post.readMin}} of reading</p>
+                                </div>
+                                <div class="home__div21">
+                                    <h4>{{post.title}}</h4>
+                                </div>
+                                <div class="home__div22">
+                                    <p>{{post.shortDis}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}
